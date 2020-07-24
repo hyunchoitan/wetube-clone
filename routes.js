@@ -37,6 +37,7 @@ const FB = "/auth/facebook",
 const API = "/api";
 const REGISTER_VIEW = "/:id/view";
 const ADD_COMMENT = "/:id/comment";
+const DELETE_COMMENT = "/:id/delete/comment";
 
 const routes = {
   home: HOME,
@@ -85,6 +86,13 @@ const routes = {
   api: API,
   registerView: REGISTER_VIEW,
   addComment: ADD_COMMENT,
+  deleteComment: (id) => {
+    if (id) {
+      return `/${id}/delete/comment`;
+    } else {
+      return DELETE_COMMENT;
+    }
+  },
 };
 
 export default routes;
